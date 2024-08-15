@@ -7,6 +7,8 @@ on:
 
 jobs:
   publish:
+    permissions:
+      contents: write
     name: Publish to main branch
     runs-on: ubuntu-latest
     steps:
@@ -15,3 +17,4 @@ jobs:
       - uses: retypeapp/action-github-pages@latest
         with:
           branch: main
+          update-branch: true
