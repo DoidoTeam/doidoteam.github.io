@@ -1,0 +1,12 @@
+input: ./docs
+output: .retype
+url: # Add your website address here
+branding:
+  title: "FNF: Doido Engine"
+  label: Wiki
+links:
+  - text: "Doido Engine Source"
+    icon: mark-github
+    link: "https://github.com/DiogoTVV/FNF-Doido-Engine-3"
+footer:
+  copyright: ""
