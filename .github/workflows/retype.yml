@@ -7,12 +7,11 @@ on:
 
 jobs:
   publish:
-    name: Publish to retype branch
+    name: Publish to main branch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: retypeapp/action-build@latest
       - uses: retypeapp/action-github-pages@latest
         with:
-          update-branch: true
           branch: main
