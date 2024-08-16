@@ -5,6 +5,9 @@ branding:
   title: "FNF: Doido Engine"
   label: Wiki
 links:
+  - text: "Play"
+    icon: play
+    link: "https://doidoteam.github.io/funkin/"
   - text: "Source Code"
     icon: mark-github
     link: "https://github.com/DiogoTVV/FNF-Doido-Engine-3"
