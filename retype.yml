@@ -5,7 +5,7 @@ branding:
   title: "FNF: Doido Engine"
   label: Wiki
 links:
-  - text: "Doido Engine Source"
+  - text: "Source Code"
     icon: mark-github
     link: "https://github.com/DiogoTVV/FNF-Doido-Engine-3"
 footer:
