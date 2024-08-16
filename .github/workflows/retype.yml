@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: retypeapp/action-build@latest
-      - uses: DoidoTeam/action-github-pages@e78fdc953cc06e39f8e2318a9a01cb40497e7223
+      - uses: DoidoTeam/action-github-pages@43e525e21d36478aca82838bbbcbd33505691376
         with:
           branch: main
           update-branch: true
