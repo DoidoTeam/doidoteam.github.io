@@ -1,6 +1,6 @@
 input: ./docs
 output: .retype
-url: # Add your website address here
+url: "https://doidoteam.github.io/"
 branding:
   title: "FNF: Doido Engine"
   label: Wiki
