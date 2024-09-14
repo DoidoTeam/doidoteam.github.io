@@ -31,7 +31,7 @@ haxelib install openfl 9.3.3
 haxelib install flixel 5.8.0
 haxelib install flixel-addons 3.2.2
 haxelib install flixel-ui 2.6.1
-haxelib install flxanimate 3.0.4
+haxelib git flxanimate https://github.com/DoidoTeam/flxanimate
 haxelib git hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc
 haxelib run lime setup 
 ```
