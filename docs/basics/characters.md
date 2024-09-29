@@ -59,7 +59,8 @@ Your character might need other variables to make it work right.
 ![](https://doidoteam.github.io/img/charlist.png){width=400}
 After coding your character, you still need to add it to the engine's internal list. Simply go over to CoolUtil.hx, and add your character's name to the `charList()` function.
 
-### Editing Offsets
-The final step to making a character is to edit their offsets using our custom Character Editor.
+### Finalize Character
+The final steps to making a character are to edit their offsets and to configure their Health Icon.
 
 [!ref](/editors/offset/)
+[!ref](/objects/icons/)
