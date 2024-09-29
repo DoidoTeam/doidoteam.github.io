@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780948728054">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780958133913">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.780948728054" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780958133913" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780948728054" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780958133913" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780948728054" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780958133913" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -211,10 +211,10 @@
 </figure>
 </p>
 <p>FNF: Doido Engine has it&#x27;s own Character Editor, that can configure all the offsets of your characters! Though it might seem intimidating at first, it&#x27;s very simple to use!</p>
-<doc-anchor-target id="configuring-the-editor">
+<doc-anchor-target id="the-editor">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-the-editor">#</doc-anchor-trigger>
-        <span>Configuring the Editor</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-editor">#</doc-anchor-trigger>
+        <span>The Editor</span>
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
@@ -224,26 +224,96 @@
 </p>
 <p>The <code v-pre>Characters</code> tab can be used to configure many things about the editor, the character and the ghost. Here is a list of what you can change.</p>
 <ul>
-<li>The <code v-pre>Character</code> and <code v-pre>Ghost</code> dropdowns (!) are used to select which character you are editing or which ghost you are seeing.</li>
-<li>The <code v-pre>Char FlipX</code> and <code v-pre>Ghost FlipX</code> checkboxes let you flip the character or ghost horizontally.</li>
-<li>The <code v-pre>Playable</code> checkbox lets you select if the character you are editing is Playable or not. If you don&#x27;t use this correctly your offsets might be wrong in-game. (NOTE: This does not affect the Ghost, so you need to set <code v-pre>Ghost FlipX</code> separatly)</li>
-<li>The <code v-pre>Show Ghost</code> checkbox lets you enable or disable the ghost.</li>
+<li>The <code v-pre>Character</code> and <doc-anchor-trigger to="#ghost"><code v-pre>Ghost</code></doc-anchor-trigger> dropdowns (!) are used to select which character you are editing or which <doc-anchor-trigger to="#ghost">ghost</doc-anchor-trigger> you are seeing.</li>
+<li>The <code v-pre>Char FlipX</code> and <code v-pre>Ghost FlipX</code> checkboxes let you flip the character or <doc-anchor-trigger to="#ghost">ghost</doc-anchor-trigger> horizontally.</li>
+<li>The <code v-pre>Playable</code> checkbox lets you select if the character you are editing is Playable or not. If you don&#x27;t use this correctly your offsets might be wrong in-game. (NOTE: This does not affect the <doc-anchor-trigger to="#ghost">ghost</doc-anchor-trigger>, so you need to set <code v-pre>Ghost FlipX</code> separatly)</li>
+<li>The <code v-pre>Show Ghost</code> checkbox lets you enable or disable the <doc-anchor-trigger to="#ghost">ghost</doc-anchor-trigger>.</li>
 <li>The <code v-pre>Focus on Character</code> checkbox decides if the camera is currently focusing on the character or not.</li>
 <li>The <code v-pre>Currently Editing</code> section decides which offset you are currently editing. You can also use the text fields to manually set an offset.</li>
+<li>The <code v-pre>Save</code> button lets you save your character&#x27;s JSON file. See <doc-anchor-trigger to="#saving-your-character"><code v-pre>Saving your Character</code></doc-anchor-trigger> section for info</li>
 </ul>
-<p>In any of the next sections, please make sure you select the correct offset before editing.</p>
+<doc-anchor-target id="controls">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#controls">#</doc-anchor-trigger>
+        <span>Controls</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>Arrow Keys</code> move the selected animation&#x27;s offset</li>
+<li>Holding <code v-pre>Shift</code> will increment them by 10</li>
+<li>Holding <code v-pre>Ctrl</code> will increment them by 100</li>
+<li><code v-pre>Middle mouse button</code> will move the camera WITHOUT changing its offset (Check Focus on Character to return it to the offset position)</li>
+<li><code v-pre>Scroll Wheel</code> will change the zoom of the camera</li>
+</ul>
+<doc-anchor-target id="ghost">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ghost">#</doc-anchor-trigger>
+        <span>Ghost</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://doidoteam.github.io/img/char_ghost.png" alt="" width="340">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Under your character, there exists a slightly transparent version of them called a Ghost. This is meant as a reference for animation offsets, and you can select its animation or even swap them for a completely different character.</p>
 <doc-anchor-target id="editing-offsets">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#editing-offsets">#</doc-anchor-trigger>
         <span>Editing Offsets</span>
     </h2>
 </doc-anchor-target>
+<p>In any of the next sections, please make sure you select the correct offset before editing.</p>
+<doc-anchor-target id="animation-offsets">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#animation-offsets">#</doc-anchor-trigger>
+        <span>Animation Offsets</span>
+    </h3>
+</doc-anchor-target>
 <p><figure class="content-center">
     <img src="https://doidoteam.github.io/img/char_anim.png" alt="" width="240">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<p>On the upper left corner of the screen, you will find the Animation selector. Simply click on any of the animations on the left to select the character&#x27;s anim, and on the right to select the ghost&#x27;s anim. After that, you can use the <code v-pre>ARROW KEYS</code> to change the offset and hold the <code v-pre>SHIFT KEYS</code> to increase them by 10.</p>
+<p>On the upper left corner of the screen, you will find the Animation selector. Simply click on any of the animations on the left to select the character&#x27;s anim, and on the right to select the ghost&#x27;s anim.</p>
+<doc-anchor-target id="global-offsets">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#global-offsets">#</doc-anchor-trigger>
+        <span>Global Offsets</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://doidoteam.github.io/img/char_global.png" alt="" width="340">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Global offset is the overall position of the character in the stage. To help with this we recommend you align the global position with the red cross that&#x27;s under the character. This way you can do character changes without having to worry about positions being buggy and they will automatically align to any stage you put them in!</p>
+<doc-anchor-target id="rating-offsets">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rating-offsets">#</doc-anchor-trigger>
+        <span>Rating Offsets</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://doidoteam.github.io/img/char_rating.png" alt="" width="340">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Rating offset is the position of the rating sprite when you hit a note as them. This is only able to be seen when you disable the <code v-pre>Ratings on HUD</code> option.</p>
+<doc-anchor-target id="camera-offsets">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#camera-offsets">#</doc-anchor-trigger>
+        <span>Camera Offsets</span>
+    </h3>
+</doc-anchor-target>
+<p>Camera offset is where the camera is gonna be when your character is focused on in-game. It may be a little hard to set it up from the editor so you can also manually edit the JSON and restart the song from the pause menu to reload.</p>
+<doc-anchor-target id="saving-your-character">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#saving-your-character">#</doc-anchor-trigger>
+        <span>Saving your Character</span>
+    </h2>
+</doc-anchor-target>
+<p>After you finish your character, you can press the <code v-pre>Save</code> button to export a JSON file, which you should save to <code v-pre>assets/images/characters/_offsets/</code></p>
 
                                 
                                 <!-- Required only on API pages -->
