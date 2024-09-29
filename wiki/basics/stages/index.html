@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780963700714">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780968830494">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -21,22 +21,22 @@
     <meta property="og:url" content="https://doidoteam.github.io/basics/stages/">
     <meta property="og:title" content="Custom Stages">
     <meta property="og:description" content="FNF: Doido Engine Documentation">
-    <meta property="og:image" content="https://doidoteam.github.io/img/reloadstage.png">
+    <meta property="og:image" content="https://doidoteam.github.io/img/stages.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://doidoteam.github.io/basics/stages/">
     <meta property="twitter:title" content="Custom Stages">
     <meta property="twitter:description" content="FNF: Doido Engine Documentation">
-    <meta property="twitter:image" content="https://doidoteam.github.io/img/reloadstage.png">
+    <meta property="twitter:image" content="https://doidoteam.github.io/img/stages.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.780963700714" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780968830494" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780963700714" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780968830494" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780963700714" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780968830494" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -211,6 +211,11 @@
         <span>Adding your assets</span>
     </h2>
 </doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://doidoteam.github.io/img/stages.png" alt="" width="600">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
 <p>Assets for stages are usually placed in <code v-pre>assets/images/backgrounds/</code>, though you are free to place them wherever you want. No specific configuration is necessary for the assets side.</p>
 <doc-anchor-target id="coding-your-stages">
     <h2>
@@ -225,7 +230,7 @@
         <span>Example Stage</span>
     </h3>
 </doc-anchor-target>
-<p>To add your new stage, you need to add a new case to the switch statement around line 84. Here&#x27;s the basis on how it works. Feel free to copy this into your code and edit it accordingly.</p>
+<p>Here is a simple example stage you can use to make your own. Copy this to the switch statement around line 85.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">case &quot;stage&quot;:
     PlayState.defaultCamZoom = 0.7;
@@ -237,6 +242,7 @@
     var bg = new FlxSprite(0, 0).loadGraphic(Paths.image(&quot;backgrounds/stage/image&quot;));
     add(bg);</code></pre>
 </doc-codeblock></div>
+<p>You can add your own sprites like our example <code v-pre>bg</code>, set the positions of each characters and set the <code v-pre>defaultCamZoom</code>.</p>
 <p><sup>NOTE: Check out the <a href="https://haxeflixel.com/documentation/flxsprite/">official Flixel documentation</a> for more info on general FlxSprite usage.</sup></p>
 <doc-anchor-target id="loading-stage">
     <h3>
@@ -255,6 +261,29 @@ The <code v-pre>reloadStageFromSong()</code> function is used to associate stage
         <span>Advanced Stage features</span>
     </h2>
 </doc-anchor-target>
+<doc-anchor-target id="gf-version">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gf-version">#</doc-anchor-trigger>
+        <span>GF Version</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://doidoteam.github.io/img/gfversion.png" alt="" width="400">
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>You can choose which Character is going in the GF position. By default this is &quot;gf&quot; but you can change it to any character you wish.
+NOTE: If you want to have no GF, you can set her version to &quot;no-gf&quot;, which is a placeholder empty character.</p>
+<doc-anchor-target id="foreground-layer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#foreground-layer">#</doc-anchor-trigger>
+        <span>Foreground Layer</span>
+    </h3>
+</doc-anchor-target>
+<p>You can choose to render Sprites on a foreground layer (above the characters) by adding the sprite like this:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">foreground.add(sprite);</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="animated-sprites">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#animated-sprites">#</doc-anchor-trigger>
@@ -276,6 +305,28 @@ add(sprite);
 
 // Play the animation
 sprite.animation.play(&quot;idle&quot;);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="stephit-and-update-functions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stephit-and-update-functions">#</doc-anchor-trigger>
+        <span>stepHit and Update functions</span>
+    </h3>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://doidoteam.github.io/img/stephit.png" alt="" width="300">
+    <figcaption class="caption"></figcaption>
+</figure>
+You can set your own code to run on the stepHit (in sync with the song) or Update (constant) functions. There is also a conditional in stepHit that allows you to run a smaller beatHit function. This can be useful for animated sprites, for example.
+<sup>NOTE: Make sure you initialize your variables in the Stage class to do this.</sup></p>
+<doc-anchor-target id="accessing-sprites-from-other-classes-playstate">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-sprites-from-other-classes-playstate">#</doc-anchor-trigger>
+        <span>Accessing Sprites from other classes (PlayState)</span>
+    </h3>
+</doc-anchor-target>
+<p>You are able to access sprites created in the Stage class from the PlayState or other classes. To do so, you can append <code v-pre>stageBuild</code> to the beginning of the sprite, like so:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">stageBuild.sprite.alpha = 0;</code></pre>
 </doc-codeblock></div>
 
                                 
