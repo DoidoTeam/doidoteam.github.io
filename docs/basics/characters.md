@@ -54,6 +54,7 @@ Your character might need other variables to make it work right.
 - `antialiasing` allows you to disable smoothing on the character, giving them a more "jagged" look.
 - `isPixelSprite` is used to determine if a character is Pixel Art or not. Use this for characters like Senpai or BF-Pixel
 - `deathChar` allows you to set a separate character as a death sprite.
+- `isAnimateAtlas` determines if the character uses an Atlas as its format. Sprite format guide is in the works so please be patient!
 
 ### Adding your character to the charList
 ![](https://doidoteam.github.io/img/charlist.png){width=400}
