@@ -9,26 +9,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Custom Stages</title>
-    <meta name="title" content="Custom Stages">
+    <title>To Do List</title>
+    <meta name="title" content="To Do List">
     <meta name="description" content="FNF: Doido Engine Documentation">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://doidoteam.github.io/basics/stages/">
+    <link rel="canonical" href="https://doidoteam.github.io/extras/to-do/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://doidoteam.github.io/basics/stages/">
-    <meta property="og:title" content="Custom Stages">
+    <meta property="og:url" content="https://doidoteam.github.io/extras/to-do/">
+    <meta property="og:title" content="To Do List">
     <meta property="og:description" content="FNF: Doido Engine Documentation">
-    <meta property="og:image" content="https://doidoteam.github.io/img/stages.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://doidoteam.github.io/basics/stages/">
-    <meta property="twitter:title" content="Custom Stages">
+    <meta property="twitter:url" content="https://doidoteam.github.io/extras/to-do/">
+    <meta property="twitter:title" content="To Do List">
     <meta property="twitter:description" content="FNF: Doido Engine Documentation">
-    <meta property="twitter:image" content="https://doidoteam.github.io/img/stages.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -199,135 +197,59 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="custom-stages" class="break-words">
+<doc-anchor-target id="to-do-list" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-stages">#</doc-anchor-trigger>
-        <span>Custom Stages</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#to-do-list">#</doc-anchor-trigger>
+        <span>To Do List</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="adding-your-assets">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-your-assets">#</doc-anchor-trigger>
-        <span>Adding your assets</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://doidoteam.github.io/img/stages.png" alt="" width="600">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p>Assets for stages are usually placed in <code v-pre>assets/images/backgrounds/</code>, though you are free to place them wherever you want. No specific configuration is necessary for the assets side.</p>
-<doc-anchor-target id="coding-your-stages">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#coding-your-stages">#</doc-anchor-trigger>
-        <span>Coding your stages</span>
-    </h2>
-</doc-anchor-target>
-<p>Code for the characters is handled by Stage.hx, which is situated in the gameObjects Source folder. For more info on how the Source folder is structured, click <a href="../../getting-started/source_structure/">here</a>.</p>
-<doc-anchor-target id="example-stage">
+<p>Here&#x27;s a list of the things about the engine that will get documented at some point. Eveything here is subject to change.</p>
+<doc-anchor-target id="getting-started">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-stage">#</doc-anchor-trigger>
-        <span>Example Stage</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-started">#</doc-anchor-trigger>
+        <span>Getting Started</span>
     </h3>
 </doc-anchor-target>
-<p>Here is a simple example stage you can use to make your own. Copy this to the switch statement around line 85.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">case &quot;stage&quot;:
-    PlayState.defaultCamZoom = 0.7;
-
-    gfPos.set(660, 580);
-    dadPos.set(260, 700);
-    bfPos.set(1100, 700);
-    
-    var bg = new FlxSprite(0, 0).loadGraphic(Paths.image(&quot;backgrounds/stage/image&quot;));
-    add(bg);</code></pre>
-</doc-codeblock></div>
-<p>You can add your own sprites like our example <code v-pre>bg</code>, set the positions of each characters and set the <code v-pre>defaultCamZoom</code>.</p>
-<p><sup>NOTE: Check out the <a href="https://haxeflixel.com/documentation/flxsprite/">official Flixel documentation</a> for more info on general FlxSprite usage.</sup></p>
-<doc-anchor-target id="loading-stage">
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Engine Setup</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Build Flags</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Engine Setup</li>
+</ul>
+<doc-anchor-target id="modding-basics">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#loading-stage">#</doc-anchor-trigger>
-        <span>Loading Stage</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#modding-basics">#</doc-anchor-trigger>
+        <span>Modding Basics</span>
     </h3>
 </doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://doidoteam.github.io/img/reloadstage.png" alt="" width="600">
-    <figcaption class="caption"></figcaption>
-</figure>
-The <code v-pre>reloadStageFromSong()</code> function is used to associate stages to songs. You can create an array of stages to be preloaded with the song that can later be changed between without any lag. The LAST stage in the array is the one thats gonna be loaded in last so keep that in mind.</p>
-<doc-anchor-target id="advanced-stage-features">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-stage-features">#</doc-anchor-trigger>
-        <span>Advanced Stage features</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="gf-version">
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Characters</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Stages</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Adding Songs</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Noteskins and Notetypes</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Event JSONs</li>
+</ul>
+<doc-anchor-target id="api">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gf-version">#</doc-anchor-trigger>
-        <span>GF Version</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api">#</doc-anchor-trigger>
+        <span>API</span>
     </h3>
 </doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://doidoteam.github.io/img/gfversion.png" alt="" width="400">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p>You can choose which Character is going in the GF position. By default this is &quot;gf&quot; but you can change it to any character you wish.
-NOTE: If you want to have no GF, you can set her version to &quot;no-gf&quot;, which is a placeholder empty character.</p>
-<doc-anchor-target id="foreground-layer">
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> PlayState Scripts</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> SongData</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> SaveData</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> CoolUtil</li>
+</ul>
+<doc-anchor-target id="editors">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#foreground-layer">#</doc-anchor-trigger>
-        <span>Foreground Layer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#editors">#</doc-anchor-trigger>
+        <span>Editors</span>
     </h3>
 </doc-anchor-target>
-<p>You can choose to render Sprites on a foreground layer (above the characters) by adding the sprite like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">foreground.add(sprite);</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="animated-sprites">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#animated-sprites">#</doc-anchor-trigger>
-        <span>Animated Sprites</span>
-    </h3>
-</doc-anchor-target>
-<p>You can have also have animated sprites, for example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">// You need to initialize the variable in the Stage class
-var sprite:FlxSprite;
-
-sprite = new FlxSprite(0,0);
-sprite.frames = Paths.getSparrowAtlas(&quot;backgrounds/stage/sprite&quot;);
-
-// Replace this with your own animations
-sprite.animation.addByPrefix('idle', 'idle', 24, false);
-
-add(sprite);
-
-// Play the animation
-sprite.animation.play(&quot;idle&quot;);</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="stephit-and-update-functions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#stephit-and-update-functions">#</doc-anchor-trigger>
-        <span>stepHit and Update functions</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://doidoteam.github.io/img/stephit.png" alt="" width="300">
-    <figcaption class="caption"></figcaption>
-</figure>
-You can set your own code to run on the stepHit (in sync with the song) or Update (constant) functions. There is also a conditional in stepHit that allows you to run a smaller beatHit function. This can be useful for animated sprites, for example.
-<sup>NOTE: Make sure you initialize your variables in the Stage class to do this.</sup></p>
-<doc-anchor-target id="accessing-sprites-from-other-classes-playstate">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-sprites-from-other-classes-playstate">#</doc-anchor-trigger>
-        <span>Accessing Sprites from other classes (PlayState)</span>
-    </h3>
-</doc-anchor-target>
-<p>You are able to access sprites created in the Stage class from the PlayState or other classes. To do so, you can append <code v-pre>stageBuild</code> to the beginning of the sprite, like so:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">stageBuild.sprite.alpha = 0;</code></pre>
-</doc-codeblock></div>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> Character Editor</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> Chart Editor</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -337,23 +259,16 @@ You can set your own code to run on the stepHit (in sync with the song) or Updat
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../basics/characters/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extras/showcase/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Custom Characters</span>
+                                                <span class="block mt-1">Showcase</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../api/scripts/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Play​State Scripts</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -394,6 +309,6 @@ You can set your own code to run on the stepHit (in sync with the song) or Updat
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Custom Stages", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "To Do List", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

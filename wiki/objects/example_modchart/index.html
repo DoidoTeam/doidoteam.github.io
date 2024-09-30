@@ -9,26 +9,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Custom Stages</title>
-    <meta name="title" content="Custom Stages">
+    <title>Example Modchart</title>
+    <meta name="title" content="Example Modchart">
     <meta name="description" content="FNF: Doido Engine Documentation">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://doidoteam.github.io/basics/stages/">
+    <link rel="canonical" href="https://doidoteam.github.io/objects/example_modchart/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://doidoteam.github.io/basics/stages/">
-    <meta property="og:title" content="Custom Stages">
+    <meta property="og:url" content="https://doidoteam.github.io/objects/example_modchart/">
+    <meta property="og:title" content="Example Modchart">
     <meta property="og:description" content="FNF: Doido Engine Documentation">
-    <meta property="og:image" content="https://doidoteam.github.io/img/stages.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://doidoteam.github.io/basics/stages/">
-    <meta property="twitter:title" content="Custom Stages">
+    <meta property="twitter:url" content="https://doidoteam.github.io/objects/example_modchart/">
+    <meta property="twitter:title" content="Example Modchart">
     <meta property="twitter:description" content="FNF: Doido Engine Documentation">
-    <meta property="twitter:image" content="https://doidoteam.github.io/img/stages.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -199,134 +197,181 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="custom-stages" class="break-words">
+<doc-anchor-target id="example-modchart" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-stages">#</doc-anchor-trigger>
-        <span>Custom Stages</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-modchart">#</doc-anchor-trigger>
+        <span>Example Modchart</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="adding-your-assets">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-your-assets">#</doc-anchor-trigger>
-        <span>Adding your assets</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://doidoteam.github.io/img/stages.png" alt="" width="600">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p>Assets for stages are usually placed in <code v-pre>assets/images/backgrounds/</code>, though you are free to place them wherever you want. No specific configuration is necessary for the assets side.</p>
-<doc-anchor-target id="coding-your-stages">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#coding-your-stages">#</doc-anchor-trigger>
-        <span>Coding your stages</span>
-    </h2>
-</doc-anchor-target>
-<p>Code for the characters is handled by Stage.hx, which is situated in the gameObjects Source folder. For more info on how the Source folder is structured, click <a href="../../getting-started/source_structure/">here</a>.</p>
-<doc-anchor-target id="example-stage">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-stage">#</doc-anchor-trigger>
-        <span>Example Stage</span>
-    </h3>
-</doc-anchor-target>
-<p>Here is a simple example stage you can use to make your own. Copy this to the switch statement around line 85.</p>
+<p>This Modchart is made with Bopeebo Erect in mind, so if you wish to test it out, create a new <code v-pre>.hxc</code> file in <code v-pre>songs/bopeebo/</code>.</p>
+<p><sup>NOTE: This modchart only works on Nightmare difficulty.</sup></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">case &quot;stage&quot;:
-    PlayState.defaultCamZoom = 0.7;
+<pre class="language-none"><code v-pre class="language-none">import data.Conductor;
+import gameObjects.hud.note.Strumline;
+import flixel.FlxG;
+import flixel.math.FlxMath;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import states.PlayState;
+import SaveData;
 
-    gfPos.set(660, 580);
-    dadPos.set(260, 700);
-    bfPos.set(1100, 700);
+var isNight:Bool = false;
+var downscroll:Bool = false;
+var downMult:Int = 1;
+
+var strumlines:Array&lt;Strumline&gt; = [];
+
+var modParams = {
+    noteRadius: 0,
+    noteSpeed: 12,
+};
+var spinNotes:Bool = false;
+var noteSin:Float = 0.0;
+
+function createPost()
+{
+    isNight = (PlayState.songDiff.toLowerCase() == &quot;nightmare&quot;
+            &amp;&amp; PlayState.SONG.song.toLowerCase() == &quot;bopeebo&quot;);
+    if(isNight)
+    {
+        trace(&quot;the script worked&quot;);
+        downscroll = SaveData.data.get(&quot;Downscroll&quot;);
+        if(downscroll)
+            downMult = -1;
+
+        PlayState.hasModchart = true;
+        for(strumline in PlayState.instance.strumlines.members)
+            strumlines.push(strumline);
+    }
+}
+function update(elapsed:Float)
+{
+    if(!isNight) return;
+    //trace('hi!! ' + elapsed);
+    if(spinNotes)
+    {
+        noteSin += elapsed * modParams.noteSpeed;
+        for(strumline in strumlines)
+        {
+            for(strum in strumline.strumGroup)
+            {
+                strum.x = strum.initialPos.x + Math.sin(noteSin + strum.strumData) * modParams.noteRadius;
+                strum.y = strum.initialPos.y + Math.cos(noteSin + strum.strumData) * modParams.noteRadius;
+            }
+        }
+    }
+}
+function stepHit(curStep:Int)
+{
+    if(!isNight) return;
     
-    var bg = new FlxSprite(0, 0).loadGraphic(Paths.image(&quot;backgrounds/stage/image&quot;));
-    add(bg);</code></pre>
-</doc-codeblock></div>
-<p>You can add your own sprites like our example <code v-pre>bg</code>, set the positions of each characters and set the <code v-pre>defaultCamZoom</code>.</p>
-<p><sup>NOTE: Check out the <a href="https://haxeflixel.com/documentation/flxsprite/">official Flixel documentation</a> for more info on general FlxSprite usage.</sup></p>
-<doc-anchor-target id="loading-stage">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#loading-stage">#</doc-anchor-trigger>
-        <span>Loading Stage</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://doidoteam.github.io/img/reloadstage.png" alt="" width="600">
-    <figcaption class="caption"></figcaption>
-</figure>
-The <code v-pre>reloadStageFromSong()</code> function is used to associate stages to songs. You can create an array of stages to be preloaded with the song that can later be changed between without any lag. The LAST stage in the array is the one thats gonna be loaded in last so keep that in mind.</p>
-<doc-anchor-target id="advanced-stage-features">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-stage-features">#</doc-anchor-trigger>
-        <span>Advanced Stage features</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="gf-version">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gf-version">#</doc-anchor-trigger>
-        <span>GF Version</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://doidoteam.github.io/img/gfversion.png" alt="" width="400">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p>You can choose which Character is going in the GF position. By default this is &quot;gf&quot; but you can change it to any character you wish.
-NOTE: If you want to have no GF, you can set her version to &quot;no-gf&quot;, which is a placeholder empty character.</p>
-<doc-anchor-target id="foreground-layer">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#foreground-layer">#</doc-anchor-trigger>
-        <span>Foreground Layer</span>
-    </h3>
-</doc-anchor-target>
-<p>You can choose to render Sprites on a foreground layer (above the characters) by adding the sprite like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">foreground.add(sprite);</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="animated-sprites">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#animated-sprites">#</doc-anchor-trigger>
-        <span>Animated Sprites</span>
-    </h3>
-</doc-anchor-target>
-<p>You can have also have animated sprites, for example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">// You need to initialize the variable in the Stage class
-var sprite:FlxSprite;
+    if(curStep &gt;= 0 &amp;&amp; curStep &lt; 64)
+    {
+        for(strumline in strumlines)
+        {
+            for(strum in strumline.strumGroup)
+            {
+                var isBack:Bool = (curStep % 4 == 2);
+                if(curStep % 2 == 0)
+                {
+                    FlxTween.tween(
+                        strum,
+                        {y: isBack ? strum.initialPos.y : strum.initialPos.y + 300 * downMult},
+                        stepToSec(2),
+                        {ease: !isBack ? FlxEase.cubeIn : FlxEase.cubeOut}
+                    );
+                    if(isBack)
+                    {
+                        strum.scale.set(1.4 * strum.strumSize, 0.6 * strum.strumSize);
+                        FlxTween.tween(
+                            strum.scale,
+                            {x: strum.strumSize, y: strum.strumSize},
+                            stepToSec(2),
+                            {ease: FlxEase.cubeOut}
+                        );
+                    }
+                }
+            }
+        }
+    }
+    if(curStep == 68)
+    {
+        notesRainbow(false);
+    }
+    if(curStep == 128)
+    {
+        notesRainbow(true);
+    }
+    if(curStep == 192)
+    {
+        for(strum in strumlines[0].strumGroup)
+            FlxTween.tween(strum, {
+                    x: strum.initialPos.x,
+                    y: strum.initialPos.y,
+                    strumAngle: 0,
+                    angle: 0,
+                }, stepToSec(2),
+                {ease: FlxEase.cubeOut}
+            );
 
-sprite = new FlxSprite(0,0);
-sprite.frames = Paths.getSparrowAtlas(&quot;backgrounds/stage/sprite&quot;);
+        // FlxMath
+        for(strum in strumlines[1].strumGroup)
+        {
+            FlxTween.tween(strum, {
+                x: FlxG.width - 100,
+                y: FlxMath.lerp(190, FlxG.height - 190,
+                    (downscroll ? 3 - strum.strumData : strum.strumData) / 3
+                ),
+                strumAngle: -90 * downMult,
+                angle: 90 * downMult,
+            }, stepToSec(4), {ease: FlxEase.cubeInOut});
+        }
+    }
+    if(curStep == 224)
+    {
+        for(strum in strumlines[1].strumGroup)
+        {
+            FlxTween.tween(strum, {
+                x: strum.initialPos.x,
+                y: strum.initialPos.y,
+                strumAngle: 0,
+                angle: 0,
+            }, stepToSec(16), {ease: FlxEase.cubeInOut});
+        } 
+    }
+    if(curStep == 240)
+    {
+        spinNotes = true;
+        FlxTween.tween(modParams, {noteRadius: 28, noteSpeed: 3}, stepToSec(16));
+    }
+}
 
-// Replace this with your own animations
-sprite.animation.addByPrefix('idle', 'idle', 24, false);
+function stepToSec(steps:Int):FLoat
+{
+    return Conductor.stepCrochet / 1000 * steps;
+}
 
-add(sprite);
-
-// Play the animation
-sprite.animation.play(&quot;idle&quot;);</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="stephit-and-update-functions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#stephit-and-update-functions">#</doc-anchor-trigger>
-        <span>stepHit and Update functions</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
-    <img src="https://doidoteam.github.io/img/stephit.png" alt="" width="300">
-    <figcaption class="caption"></figcaption>
-</figure>
-You can set your own code to run on the stepHit (in sync with the song) or Update (constant) functions. There is also a conditional in stepHit that allows you to run a smaller beatHit function. This can be useful for animated sprites, for example.
-<sup>NOTE: Make sure you initialize your variables in the Stage class to do this.</sup></p>
-<doc-anchor-target id="accessing-sprites-from-other-classes-playstate">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-sprites-from-other-classes-playstate">#</doc-anchor-trigger>
-        <span>Accessing Sprites from other classes (PlayState)</span>
-    </h3>
-</doc-anchor-target>
-<p>You are able to access sprites created in the Stage class from the PlayState or other classes. To do so, you can append <code v-pre>stageBuild</code> to the beginning of the sprite, like so:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">stageBuild.sprite.alpha = 0;</code></pre>
+function notesRainbow(isOut:Bool = false)
+{
+    var rainMult:Int = (isOut ? -1 : 1) * downMult;
+    for(strumline in strumlines)
+    {
+        for(strum in strumline.strumGroup)
+        {
+            var daAngle:Float = [15, 5, -5, -15][strum.strumData] * rainMult;
+            FlxTween.tween(
+                strum,
+                {
+                    y: strum.initialPos.y + [1,0,0,1][strum.strumData] * 20 * rainMult,
+                    strumAngle: daAngle,
+                    angle: -daAngle
+                },
+                stepToSec(2),
+                {ease: FlxEase.cubeOut}
+            );
+        }
+    }
+}</code></pre>
 </doc-codeblock></div>
 
                                 
@@ -335,27 +380,6 @@ You can set your own code to run on the stepHit (in sync with the song) or Updat
                             </div>
                             <footer class="clear-both">
                             
-                                <nav class="flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../basics/characters/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Custom Characters</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../api/scripts/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Play​State Scripts</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
                             </footer>
                         </main>
                 
@@ -394,6 +418,6 @@ You can set your own code to run on the stepHit (in sync with the song) or Updat
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Custom Stages", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Example Modchart", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
