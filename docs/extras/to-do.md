@@ -15,7 +15,7 @@ Here's a list of the things about the engine that will get documented at some po
 - [X] Stages
 - [ ] Adding Songs
 - [ ] Noteskins and Notetypes
-- [ ] Event JSONs
+- [X] Event JSONs
 
 ### API
 - [X] PlayState Scripts
@@ -25,4 +25,4 @@ Here's a list of the things about the engine that will get documented at some po
 
 ### Editors
 - [X] Character Editor
-- [ ] Chart Editor
+- [X] Chart Editor
