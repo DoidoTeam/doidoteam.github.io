@@ -1,7 +1,7 @@
 ---
 label: Custom Stages
 description: "FNF: Doido Engine Documentation"
-order: -1
+order: -2
 ---
 
 # Custom Stages

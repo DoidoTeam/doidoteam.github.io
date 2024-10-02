@@ -121,6 +121,6 @@ function createPost() {
 - For other, simpler events, please checkout the Events guide.
 - For other possible uses of HScript-Iris, please visit their repository to learn more!
 
-
+[!ref](/basics/events/)
 [!ref](https://github.com/crowplexus/hscript-iris)
 

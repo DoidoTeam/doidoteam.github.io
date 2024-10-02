@@ -5,6 +5,9 @@ description: "FNF: Doido Engine Documentation"
 
 # Setting up the Engine
 
+![](https://raw.githubusercontent.com/DoidoTeam/FNF-Doido-Engine/refs/heads/main/assets/images/crash.png)
+
+
 ## Dependencies
 All platforms:
 - [git-scm](https://git-scm.com/)
