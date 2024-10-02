@@ -58,7 +58,7 @@ Here's what a handfull of buttons in the Chart Editor do!
 
 ## Events
 
-For events, please check its own page!
+For events, please check their own page!
 
 [!ref](/basics/events/)
 
