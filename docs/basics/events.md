@@ -28,7 +28,7 @@ To create custom events, you simply need to add the Event to the `onEventHit()` 
 
 ### Event Icon
 
-While an icon isn't required for an event, it helps you with knowing which events are on different slots. To add a custom icon, simply add the icon to `images/notes/events/`.
+While an icon isn't required for an event (there is a default icon that gets used if no icon exists), it helps you with knowing which events are on different slots. To add a custom icon, simply add the icon to `images/notes/events/`.
 
 ^NOTE: Icons are named in lowercase with underscores `_` replacing spaces.^
 
