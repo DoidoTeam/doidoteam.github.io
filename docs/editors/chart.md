@@ -39,7 +39,7 @@ Here's what a handfull of buttons in the Chart Editor do!
 - `Mute Inst` and `Voices` mute the Instrumental and Vocal tracks
 - `BF` and `Dad Hitsounds` enable hitsounds whenever notes are hit by the Player or the Opponent
 - `Old Timer` changes the timer style. If enabled the current time will be displayed in seconds, as opposed to minutes
-- `Clear Events`, `Notes` and `Song` clear the notes in the desired track. `Clear Song` will clear both the Events and Notes.
+- `Clear Events`, `Notes` and `Song` clear the notes in the desired track. `Clear Song` will clear both the Events and Notes. These buttons will (auto-save)[/editors/chart/#autosaving] the chart.
 - `Controls` displays a list of available controls
 
 ### Section
@@ -62,10 +62,10 @@ For events, please check their own page!
 
 [!ref](/basics/events/)
 
-## AutoSaving
+## Auto-Saving
 
 ![](https://doidoteam.github.io/img/autosave.png){width=800}
 
-If you ever crash or exit the game without saving your chart, you can load it by using the "AutoSaved Charts Station". By opening this SubState from the Chart Editor, you will be able to load one of 5 previously edited charts. THe game auto saves every 5 minutes, as well as every time you press play or clear a chart!
+If you ever crash or exit the game without saving your chart, you can load it by using the "Auto-Saved Charts Station". By opening this SubState from the Chart Editor, you will be able to load one of 5 previously edited charts. The game auto-saves every 5 minutes, as well as every time you play or clear a chart!
 
 

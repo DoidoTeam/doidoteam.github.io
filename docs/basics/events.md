@@ -20,6 +20,10 @@ Each event can have up to 3 values, which are detailed on a case by case basis. 
 
 You can also use the `Clear this Slot` and `Clear all Slots` buttons to clear the values and selected events of a single or every slot.
 
+## Events by difficulty
+
+You can name an event JSON using its difficulty to have it load only when you play that certain difficulty. For example, if you name a JSON `events-easy.json` it will only play those events on Easy.
+
 ## Adding Custom Events
 
 ![](https://doidoteam.github.io/img/possibleevents.png){width=800}
