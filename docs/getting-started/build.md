@@ -35,6 +35,7 @@ haxelib install flixel 5.8.0
 haxelib install flixel-addons 3.2.2
 haxelib install flixel-ui 2.6.1
 haxelib install hscript-iris 1.1.0
+haxelib git tjson https://github.com/DoidoTeam/TJSON
 haxelib git flxanimate-doido https://github.com/DoidoTeam/flxanimate-doido
 haxelib git hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc
 haxelib run lime setup 
