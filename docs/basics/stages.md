@@ -14,14 +14,14 @@ Assets for stages are usually placed in `assets/images/backgrounds/`, though you
 
 ## Coding your stages
 
-Code for the characters is handled by Stage.hx, which is situated in the gameObjects Source folder. For more info on how the Source folder is structured, click [here](/getting-started/source_structure).
+Code for the characters is handled by either Stage.hx, which is situated in the objects Source folder, or the new (>= 3.4.0) Stage scripts. For more info on how the Source folder is structured, click [here](/getting-started/source_structure).
 
-### Example Stage
+### Example Stage (Hardcoded)
 Here is a simple example stage you can use to make your own. Copy this to the switch statement around line 85. 
 
 ```
 case "stage":
-    PlayState.defaultCamZoom = 0.7;
+    camZoom = 0.7;
 
     gfPos.set(660, 580);
     dadPos.set(260, 700);
@@ -31,7 +31,25 @@ case "stage":
     add(bg);
 ```
 
-You can add your own sprites like our example `bg`, set the positions of each characters and set the `defaultCamZoom`.
+### Example Stage (Script)
+
+Here is an example stage script. General rule of thumb, these work similarly to PlayState scripts, and you have to use `this` to access variables like `gfVersion` or `camZoom`.
+
+```
+function create()
+{
+    dadPos.x -= 100;
+    dadCam.y += 150;
+
+    this.gfVersion = "no-gf";
+    this.camZoom = 0.7;
+
+    var bg = new FlxSprite(-640, -1000).loadGraphic(Paths.image("stages/mugen/mugen"));
+    add(bg);
+}
+```
+
+You can add your own sprites like our example `bg`, set the positions of each characters and set the `camZoom`.
 
 ^NOTE: Check out the [official Flixel documentation](https://haxeflixel.com/documentation/flxsprite/) for more info on general FlxSprite usage.^
 
@@ -74,7 +92,7 @@ sprite.animation.play("idle");
 
 ### stepHit and Update functions
 ![](https://doidoteam.github.io/img/stephit.png){width=300}
-You can set your own code to run on the stepHit (in sync with the song) or Update (constant) functions. There is also a conditional in stepHit that allows you to run a smaller beatHit function. This can be useful for animated sprites, for example.
+You can set your own code to run on the `stepHit` (in sync with the song) or `update` (constant) functions. There is also a conditional in stepHit that allows you to run a smaller beatHit function. This can be useful for animated sprites, for example.
 ^NOTE: Make sure you initialize your variables in the Stage class to do this.^
 
 ### Accessing Sprites from other classes (PlayState)

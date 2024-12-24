@@ -46,7 +46,7 @@ The `anims` array works under this format. You can use this as a reference to ad
 - `LOOPED` decides if the animation should loop when it reaches the end (for singing or other mid-song animations, set this to false)
 - `[FRAMES]` is an array of which frames of the animation should be played. Normally you can leave this out but this is useful for GF/speaker type characters.
 
-### Other variables
+### Other variables / functions
 Your character might need other variables to make it work right.
 - The `scale` of a character can be changed with `scale.set(width,height);`
 - Like other engines, if your character is facing the left (Like BF or Pico), you should set `flipX` to true.
@@ -54,11 +54,14 @@ Your character might need other variables to make it work right.
 - `antialiasing` allows you to disable smoothing on the character, giving them a more "jagged" look.
 - `isPixelSprite` is used to determine if a character is Pixel Art or not. Use this for characters like Senpai or BF-Pixel
 - `deathChar` allows you to set a separate character as a death sprite.
-- `isAnimateAtlas` determines if the character uses an Atlas as its format. Sprite format guide is in the works so please be patient!
+- `spriteType` determines what type of sprite is used. Set this to `ATLAS` Sprite format guide is in the works so please be patient!
+- `invertDirection(axis)` inverts the current directions. Useful for characters that are used both for the opponent and the player side
+- `pauseAnim()` pauses the current animation
+- `animExists(animName)` throws true if `animName` is a valid animation for this character
 
 ### Adding your character to the charList
 ![](https://doidoteam.github.io/img/charlist.png){width=400}
-After coding your character, you still need to add it to the engine's internal list. Simply go over to CoolUtil.hx, and add your character's name to the `charList()` function.
+After coding your character, you still need to add it to the engine's internal list. Simply go over to CharacterUtil.hx, and add your character's name to the `charList()` function.
 
 ### Finalize Character
 The final steps to making a character are to edit their offsets and to configure their Health Icon.
