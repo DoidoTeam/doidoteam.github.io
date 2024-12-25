@@ -1,0 +1,5 @@
+.git/
+.vscode/launch.json
+.DS_Store
+.AppleDouble
+.LSOverride
