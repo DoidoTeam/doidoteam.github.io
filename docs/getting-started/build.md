@@ -27,19 +27,8 @@ curl -# -O https://download.visualstudio.microsoft.com/download/pr/3105fcfe-e771
 vs_Community.exe --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.Windows10SDK.19041 -p
 del vs_Community.exe
 ```
-3. Open up any terminal in the engine folder (such as CMD or Powershell) and run the following commands
-```
-haxelib install lime 8.1.2
-haxelib install openfl 9.3.3
-haxelib install flixel 5.8.0
-haxelib install flixel-addons 3.2.2
-haxelib install flixel-ui 2.6.1
-haxelib install hscript-iris 1.1.0
-haxelib git tjson https://github.com/DoidoTeam/TJSON
-haxelib git flxanimate-doido https://github.com/DoidoTeam/flxanimate-doido
-haxelib git hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc
-haxelib run lime setup 
-```
+3. Run the setup script located in `art/scripts/setup-PLATFORM`
+
 4. Build the game
 - Run the command `lime test PLATFORM`, where platform is where you are building the engine for (ex: Windows, HTML5, Linux)
 - First time you build the engine will take longer than usual, so don't worry and be patient!
