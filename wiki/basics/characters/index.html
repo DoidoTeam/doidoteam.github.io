@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782488280361">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788488518712">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.782488280361" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.788488518712" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782488280361" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.788488518712" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782488280361" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.788488518712" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -262,10 +262,10 @@
 <li><code v-pre>LOOPED</code> decides if the animation should loop when it reaches the end (for singing or other mid-song animations, set this to false)</li>
 <li><code v-pre>[FRAMES]</code> is an array of which frames of the animation should be played. Normally you can leave this out but this is useful for GF/speaker type characters.</li>
 </ul>
-<doc-anchor-target id="other-variables">
+<doc-anchor-target id="other-variables--functions">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#other-variables">#</doc-anchor-trigger>
-        <span>Other variables</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#other-variables--functions">#</doc-anchor-trigger>
+        <span>Other variables / functions</span>
     </h3>
 </doc-anchor-target>
 <p>Your character might need other variables to make it work right.</p>
@@ -276,7 +276,10 @@
 <li><code v-pre>antialiasing</code> allows you to disable smoothing on the character, giving them a more &quot;jagged&quot; look.</li>
 <li><code v-pre>isPixelSprite</code> is used to determine if a character is Pixel Art or not. Use this for characters like Senpai or BF-Pixel</li>
 <li><code v-pre>deathChar</code> allows you to set a separate character as a death sprite.</li>
-<li><code v-pre>isAnimateAtlas</code> determines if the character uses an Atlas as its format. Sprite format guide is in the works so please be patient!</li>
+<li><code v-pre>spriteType</code> determines what type of sprite is used. Set this to <code v-pre>ATLAS</code> Sprite format guide is in the works so please be patient!</li>
+<li><code v-pre>invertDirection(axis)</code> inverts the current directions. Useful for characters that are used both for the opponent and the player side</li>
+<li><code v-pre>pauseAnim()</code> pauses the current animation</li>
+<li><code v-pre>animExists(animName)</code> throws true if <code v-pre>animName</code> is a valid animation for this character</li>
 </ul>
 <doc-anchor-target id="adding-your-character-to-the-charlist">
     <h3>
@@ -288,7 +291,7 @@
     <img src="https://doidoteam.github.io/img/charlist.png" alt="" width="400">
     <figcaption class="caption"></figcaption>
 </figure>
-After coding your character, you still need to add it to the engine&#x27;s internal list. Simply go over to CoolUtil.hx, and add your character&#x27;s name to the <code v-pre>charList()</code> function.</p>
+After coding your character, you still need to add it to the engine&#x27;s internal list. Simply go over to CharacterUtil.hx, and add your character&#x27;s name to the <code v-pre>charList()</code> function.</p>
 <doc-anchor-target id="finalize-character">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#finalize-character">#</doc-anchor-trigger>

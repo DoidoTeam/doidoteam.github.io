@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782488280361">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788488518712">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.782488280361" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.788488518712" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782488280361" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.788488518712" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782488280361" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.788488518712" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -223,17 +223,17 @@
         <span>Coding your stages</span>
     </h2>
 </doc-anchor-target>
-<p>Code for the characters is handled by Stage.hx, which is situated in the gameObjects Source folder. For more info on how the Source folder is structured, click <a href="../../getting-started/source_structure/">here</a>.</p>
-<doc-anchor-target id="example-stage">
+<p>Code for the characters is handled by either Stage.hx, which is situated in the objects Source folder, or the new (&gt;= 3.4.0) Stage scripts. For more info on how the Source folder is structured, click <a href="../../getting-started/source_structure/">here</a>.</p>
+<doc-anchor-target id="example-stage-hardcoded">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-stage">#</doc-anchor-trigger>
-        <span>Example Stage</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-stage-hardcoded">#</doc-anchor-trigger>
+        <span>Example Stage (Hardcoded)</span>
     </h3>
 </doc-anchor-target>
 <p>Here is a simple example stage you can use to make your own. Copy this to the switch statement around line 85.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">case &quot;stage&quot;:
-    PlayState.defaultCamZoom = 0.7;
+    camZoom = 0.7;
 
     gfPos.set(660, 580);
     dadPos.set(260, 700);
@@ -242,7 +242,27 @@
     var bg = new FlxSprite(0, 0).loadGraphic(Paths.image(&quot;backgrounds/stage/image&quot;));
     add(bg);</code></pre>
 </doc-codeblock></div>
-<p>You can add your own sprites like our example <code v-pre>bg</code>, set the positions of each characters and set the <code v-pre>defaultCamZoom</code>.</p>
+<doc-anchor-target id="example-stage-script">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-stage-script">#</doc-anchor-trigger>
+        <span>Example Stage (Script)</span>
+    </h3>
+</doc-anchor-target>
+<p>Here is an example stage script. General rule of thumb, these work similarly to PlayState scripts, and you have to use <code v-pre>this</code> to access variables like <code v-pre>gfVersion</code> or <code v-pre>camZoom</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">function create()
+{
+    dadPos.x -= 100;
+    dadCam.y += 150;
+
+    this.gfVersion = &quot;no-gf&quot;;
+    this.camZoom = 0.7;
+
+    var bg = new FlxSprite(-640, -1000).loadGraphic(Paths.image(&quot;stages/mugen/mugen&quot;));
+    add(bg);
+}</code></pre>
+</doc-codeblock></div>
+<p>You can add your own sprites like our example <code v-pre>bg</code>, set the positions of each characters and set the <code v-pre>camZoom</code>.</p>
 <p><sup>NOTE: Check out the <a href="https://haxeflixel.com/documentation/flxsprite/">official Flixel documentation</a> for more info on general FlxSprite usage.</sup></p>
 <doc-anchor-target id="loading-stage">
     <h3>
@@ -316,7 +336,7 @@ sprite.animation.play(&quot;idle&quot;);</code></pre>
     <img src="https://doidoteam.github.io/img/stephit.png" alt="" width="300">
     <figcaption class="caption"></figcaption>
 </figure>
-You can set your own code to run on the stepHit (in sync with the song) or Update (constant) functions. There is also a conditional in stepHit that allows you to run a smaller beatHit function. This can be useful for animated sprites, for example.
+You can set your own code to run on the <code v-pre>stepHit</code> (in sync with the song) or <code v-pre>update</code> (constant) functions. There is also a conditional in stepHit that allows you to run a smaller beatHit function. This can be useful for animated sprites, for example.
 <sup>NOTE: Make sure you initialize your variables in the Stage class to do this.</sup></p>
 <doc-anchor-target id="accessing-sprites-from-other-classes-playstate">
     <h3>

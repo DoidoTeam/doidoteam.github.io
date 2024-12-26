@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782488280361">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788488518712">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.782488280361" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.788488518712" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782488280361" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.788488518712" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782488280361" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.788488518712" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -212,10 +212,9 @@
 </p>
 <p>Our Source folder is organized according to what function each .hx file has:</p>
 <ul>
-<li><code v-pre>data/</code> holds important code relating to the engine&#x27;s core functions and tools, such as Highscore, Timings, Discord and the CrashHandler. You will probably only use this to add Songs or change the Discord Status config.</li>
+<li><code v-pre>backend/</code> (previously <code v-pre>data</code>) holds important code relating to the engine&#x27;s core functions and tools, such as Highscore, Timings, Discord and the CrashHandler. You will probably only use this to add Songs or change the Discord Status config.</li>
 <li><code v-pre>flixel/</code> has modified HaxeFlixel code that is optimized for Doido Engine. You probably won&#x27;t need to use this.</li>
-<li><code v-pre>gameObjects/</code> is where all the objects are stored, such as Characters, Stages, Notes and all the UI. This is something you will use a lot. It has a couple of subfolders specific to the HUD or menus.</li>
-<li><code v-pre>shaders/</code> is where any graphical shaders are stored. Included in the engine is DistantNoteShader, but you might wanna add more, depending on your mod&#x27;s needs.</li>
+<li><code v-pre>objects/</code> (previously <code v-pre>gameObjects</code>) is where all the objects are stored, such as Characters, Stages, Notes and all the UI. This is something you will use a lot. It has a couple of subfolders specific to the HUD or menus.</li>
 <li><code v-pre>states/</code> and <code v-pre>substates/</code> hold the code for the game&#x27;s states, such as the PlayState or MainMenuState for <code v-pre>states/</code>, and the GameOverSubState or PauseSubState for <code v-pre>substates/</code>.</li>
 </ul>
 
