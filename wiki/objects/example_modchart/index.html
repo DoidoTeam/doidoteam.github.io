@@ -207,13 +207,14 @@
 <p><sup>NOTE: This modchart only works on Nightmare difficulty.</sup></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">import data.Conductor;
-import gameObjects.hud.note.Strumline;
+import backend.song.Conductor;
+import objects.note.Strumline;
 import flixel.FlxG;
 import flixel.math.FlxMath;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import states.PlayState;
-import SaveData;
+import backend.game.SaveData;
 
 var isNight:Bool = false;
 var downscroll:Bool = false;
