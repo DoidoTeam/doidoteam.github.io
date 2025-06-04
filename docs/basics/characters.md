@@ -51,8 +51,7 @@ Your character might need other variables to make it work right.
 - The `scale` of a character can be changed with `scale.set(width,height);`
 - Like other engines, if your character is facing the left (Like BF or Pico), you should set `flipX` to true.
 - `idleAnims` allows you to change which idle animation(s) the character uses. For example, Skid and Pump use `["danceLeft", "danceRight"]` to give them their dance. If you have more than one idle anim, you should set `quickDancer` to true.
-- `antialiasing` allows you to disable smoothing on the character, giving them a more "jagged" look.
-- `isPixelSprite` is used to determine if a character is Pixel Art or not. Use this for characters like Senpai or BF-Pixel
+- `isPixelSprite` is used to determine if a character is Pixel Art or not. It forces `antialiasing` to be turned off in your character, whether it's enabled in the options or not. Use this for characters like Senpai or BF-Pixel
 - `deathChar` allows you to set a separate character as a death sprite.
 - `spriteType` determines what type of sprite is used. Set this to `ATLAS` Sprite format guide is in the works so please be patient!
 - `invertDirection(axis)` inverts the current directions. Useful for characters that are used both for the opponent and the player side
