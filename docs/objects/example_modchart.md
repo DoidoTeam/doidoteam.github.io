@@ -10,14 +10,14 @@ This Modchart is made with Bopeebo Erect in mind, so if you wish to test it out,
 ^NOTE: This modchart only works on Nightmare difficulty.^
 
 ```
-import data.Conductor;
-import gameObjects.hud.note.Strumline;
+import backend.song.Conductor;
+import backend.game.SaveData;
+import objects.note.Strumline;
 import flixel.FlxG;
 import flixel.math.FlxMath;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import states.PlayState;
-import SaveData;
 
 var isNight:Bool = false;
 var downscroll:Bool = false;
