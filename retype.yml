@@ -2,7 +2,7 @@ input: ./docs
 output: .retype
 url: "https://doidoteam.github.io/"
 branding:
-  title: "FNF: Doido Engine"
+  title: "FNF: Doido Engine 3.4"
   label: Wiki
 links:
   - text: "Play"

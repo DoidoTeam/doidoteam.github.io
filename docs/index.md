@@ -1,16 +1,12 @@
 ---
 label: Home
 icon: home
-description: "FNF: Doido Engine Documentation"
+description: "FNF: Doido Engine 3.4 Documentation"
 ---
 
 # Home
 
-<p align="center">
-<img src="https://www.newgrounds.com/dump/draw/27ed38c719b9761af970cac60f441e21">
-</p>
-
-Welcome to the official FNF: Doido Engine Documentation! Here you can find any information you might need on how to make your own mod in the engine!
+This page features an archive of the last revision to the FNF: Doido Engine 3.4 documentation. It will remain incomplete as we have moved development to version 4.0 and will be making a new wiki for it.
 
 ## Getting Started
  - :rocket: [How to setup the engine](/getting-started/build/)

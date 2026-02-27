@@ -1,6 +1,6 @@
 ---
 label: Character Editor
-description: "FNF: Doido Engine Documentation"
+description: "FNF: Doido Engine 3.4 Documentation"
 ---
 
 # Character Editor
