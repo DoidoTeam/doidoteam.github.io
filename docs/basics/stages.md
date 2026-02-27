@@ -8,7 +8,7 @@ order: -2
 
 ## Adding your assets
 
-![](https://doidoteam.github.io/img/stages.png){width=600}
+![](https://doidoteam.github.io/img/wiki-old/stages.png){width=600}
 
 Assets for stages are usually placed in `assets/images/backgrounds/`, though you are free to place them wherever you want. No specific configuration is necessary for the assets side.
 
@@ -54,13 +54,13 @@ You can add your own sprites like our example `bg`, set the positions of each ch
 ^NOTE: Check out the [official Flixel documentation](https://haxeflixel.com/documentation/flxsprite/) for more info on general FlxSprite usage.^
 
 ### Loading Stage
-![](https://doidoteam.github.io/img/reloadstage.png){width=600}
+![](https://doidoteam.github.io/img/wiki-old/reloadstage.png){width=600}
 The `reloadStageFromSong()` function is used to associate stages to songs. You can create an array of stages to be preloaded with the song that can later be changed between without any lag. The LAST stage in the array is the one thats gonna be loaded in last so keep that in mind.
 
 ## Advanced Stage features
 
 ### GF Version
-![](https://doidoteam.github.io/img/gfversion.png){width=400}
+![](https://doidoteam.github.io/img/wiki-old/gfversion.png){width=400}
 
 You can choose which Character is going in the GF position. By default this is "gf" but you can change it to any character you wish.
 NOTE: If you want to have no GF, you can set her version to "no-gf", which is a placeholder empty character.
@@ -91,7 +91,7 @@ sprite.animation.play("idle");
 ```
 
 ### stepHit and Update functions
-![](https://doidoteam.github.io/img/stephit.png){width=300}
+![](https://doidoteam.github.io/img/wiki-old/stephit.png){width=300}
 You can set your own code to run on the `stepHit` (in sync with the song) or `update` (constant) functions. There is also a conditional in stepHit that allows you to run a smaller beatHit function. This can be useful for animated sprites, for example.
 ^NOTE: Make sure you initialize your variables in the Stage class to do this.^
 

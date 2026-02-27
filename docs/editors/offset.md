@@ -5,13 +5,13 @@ description: "FNF: Doido Engine 3.4 Documentation"
 
 # Character Editor
 
-![](https://doidoteam.github.io/img/char_main.png){width=800}
+![](https://doidoteam.github.io/img/wiki-old/char_main.png){width=800}
 
 FNF: Doido Engine has it's own Character Editor, that can configure all the offsets of your characters! Though it might seem intimidating at first, it's very simple to use!
 
 ## The Editor
 
-![](https://doidoteam.github.io/img/char_settings.png){width=340}
+![](https://doidoteam.github.io/img/wiki-old/char_settings.png){width=340}
 
 The `Characters` tab can be used to configure many things about the editor, the character and the ghost. Here is a list of what you can change.
 - The `Character` and [`Ghost`](/editors/offset/#ghost) dropdowns (!) are used to select which character you are editing or which [ghost](/editors/offset/#ghost) you are seeing.
@@ -31,7 +31,7 @@ The `Characters` tab can be used to configure many things about the editor, the 
 
 ### Ghost
 
-![](https://doidoteam.github.io/img/char_ghost.png){width=340}
+![](https://doidoteam.github.io/img/wiki-old/char_ghost.png){width=340}
 
 Under your character, there exists a slightly transparent version of them called a Ghost. This is meant as a reference for animation offsets, and you can select its animation or even swap them for a completely different character.
 
@@ -41,19 +41,19 @@ In any of the next sections, please make sure you select the correct offset befo
 
 ### Animation Offsets
 
-![](https://doidoteam.github.io/img/char_anim.png){width=240}
+![](https://doidoteam.github.io/img/wiki-old/char_anim.png){width=240}
 
 On the upper left corner of the screen, you will find the Animation selector. Simply click on any of the animations on the left to select the character's anim, and on the right to select the ghost's anim.
 
 ### Global Offsets
 
-![](https://doidoteam.github.io/img/char_global.png){width=340}
+![](https://doidoteam.github.io/img/wiki-old/char_global.png){width=340}
 
 Global offset is the overall position of the character in the stage. To help with this we recommend you align the global position with the red cross that's under the character. This way you can do character changes without having to worry about positions being buggy and they will automatically align to any stage you put them in!
 
 ### Rating Offsets
 
-![](https://doidoteam.github.io/img/char_rating.png){width=340}
+![](https://doidoteam.github.io/img/wiki-old/char_rating.png){width=340}
 
 Rating offset is the position of the rating sprite when you hit a note as them. This is only able to be seen when you disable the `Ratings on HUD` option.
 

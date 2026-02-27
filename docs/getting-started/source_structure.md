@@ -6,7 +6,7 @@ order: -3
 
 # Source Folder
 
-![](https://doidoteam.github.io/img/source_folders.png){width=1000}
+![](https://doidoteam.github.io/img/wiki-old/source_folders.png){width=1000}
 
 Our Source folder is organized according to what function each .hx file has:
 - `backend/` (previously `data`) holds important code relating to the engine's core functions and tools, such as Highscore, Timings, Discord and the CrashHandler. You will probably only use this to add Songs or change the Discord Status config. 

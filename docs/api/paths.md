@@ -6,7 +6,7 @@ order: -1
 
 # Paths
 
-![](https://doidoteam.github.io/img/paths.png){width=500}
+![](https://doidoteam.github.io/img/wiki-old/paths.png){width=500}
 
 The Paths class holds some new functions and variables that may be useful for creating mods:
 

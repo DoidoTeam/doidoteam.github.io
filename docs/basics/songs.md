@@ -7,13 +7,13 @@ description: "FNF: Doido Engine 3.4 Documentation"
 
 ## Adding your assets
 
-![](https://doidoteam.github.io/img/songs.png){width=700}
+![](https://doidoteam.github.io/img/wiki-old/songs.png){width=700}
 
 Firstly, place both your song and its chart in their own folder in `assets/songs/`. FNF: Doido Engine places all of its song related files in their respective folders so `.ogg` files as well as their Charts, Events or song-specific scripts all go here.
 
 ## Adding songs in-game
 
-![](https://doidoteam.github.io/img/weeks.png){width=360}
+![](https://doidoteam.github.io/img/wiki-old/weeks.png){width=360}
 
 To add new songs to either the Story Mode or the Freeplay menu, you need to add it to the weeks array in the **SongData** class. You can either use any preexisting weeks or the following example to create your own.
 ```

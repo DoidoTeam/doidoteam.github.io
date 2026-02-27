@@ -6,7 +6,7 @@ order: -2
 
 # Assets Folder
 
-![](https://doidoteam.github.io/img/assets.png){width=1000}
+![](https://doidoteam.github.io/img/wiki-old/assets.png){width=1000}
 
 FNF: Doido Engine's Assets folder has been reorganized. Since we have our own custom loader, the engine doesn't require `preload` and `shared` paths and everything goes in `assets/`.
 

@@ -5,7 +5,7 @@ description: "FNF: Doido Engine 3.4 Documentation"
 
 # PlayState Scripts
 
-![](https://doidoteam.github.io/img/scripts.png){width=500}
+![](https://doidoteam.github.io/img/wiki-old/scripts.png){width=500}
 
 FNF: Doido Engine uses [HScript-Iris](https://github.com/crowplexus/hscript-iris) to have user-made scripts that are ran from the Playstate. It is currently developed to make modcharts, but you are also able to do other things using it. Any regular events should be done using JSON events.
 

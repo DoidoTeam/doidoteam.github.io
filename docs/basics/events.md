@@ -6,7 +6,7 @@ order: -3
 
 # Events
 
-![](https://doidoteam.github.io/img/events.png){width=800}
+![](https://doidoteam.github.io/img/wiki-old/events.png){width=800}
 
 FNF: Doido Engine's Event JSONs work in a similar way to Psych Engine's, but there are a few differences. Here's a small guide of them.
 
@@ -26,7 +26,7 @@ You can name an event JSON using its difficulty to have it load only when you pl
 
 ## Adding Custom Events
 
-![](https://doidoteam.github.io/img/possibleevents.png){width=800}
+![](https://doidoteam.github.io/img/wiki-old/possibleevents.png){width=800}
 
 To create custom events, you simply need to add the Event to the `onEventHit()` function in PlayState. Then, to use these events, you will also need to add them to the `possibleEvents` array in the ChartingState class.
 

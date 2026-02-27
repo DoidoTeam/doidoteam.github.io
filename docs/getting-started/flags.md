@@ -4,7 +4,7 @@ description: "FNF: Doido Engine 3.4 Documentation"
 order: -1
 ---
 
-![](https://doidoteam.github.io/img/flags.png)
+![](https://doidoteam.github.io/img/wiki-old/flags.png)
 
 There are a couple of Flags you can use when building the engine that can help you in development.
 
@@ -15,7 +15,7 @@ lime test windows -debug -DFREEPLAY
 ```
 If you use VSCode, you can simply select a build preset from the platform list.
 
-![](https://doidoteam.github.io/img/vscode_plat.png)
+![](https://doidoteam.github.io/img/wiki-old/vscode_plat.png)
 
 ### List of available flags
 - `-debug` can build the game in debug mode. This enables many debug features, such as the FlxDebugger and debugging through VSCode.

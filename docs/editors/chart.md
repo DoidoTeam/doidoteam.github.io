@@ -5,13 +5,13 @@ description: "FNF: Doido Engine 3.4 Documentation"
 
 # Chart Editor
 
-![](https://doidoteam.github.io/img/chart.png){width=800}
+![](https://doidoteam.github.io/img/wiki-old/chart.png){width=800}
 
 FNF: Doido Engine also features an improved Chart Editor. Most of its features are the same as the legacy 0.2.7 charter so we wont get into as much detail, but there are still a couple of features to note.
 
 ## The Grid
 
-![](https://doidoteam.github.io/img/grid.png){width=400}
+![](https://doidoteam.github.io/img/wiki-old/grid.png){width=400}
 
 The grid is the main part of the Chart Edior and where you place notes. Nothing much has changed but there are a set of things that are different.
 
@@ -64,7 +64,7 @@ For events, please check their own page!
 
 ## Auto-Saving
 
-![](https://doidoteam.github.io/img/autosave.png){width=800}
+![](https://doidoteam.github.io/img/wiki-old/autosave.png){width=800}
 
 If you ever crash or exit the game without saving your chart, you can load it by using the "Auto-Saved Charts Station". By opening this SubState from the Chart Editor, you will be able to load one of 5 previously edited charts. The game auto-saves every 5 minutes, as well as every time you play or clear a chart!
 

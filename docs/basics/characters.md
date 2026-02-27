@@ -7,7 +7,7 @@ description: "FNF: Doido Engine 3.4 Documentation"
 
 ## Adding your assets
 
-![](https://doidoteam.github.io/img/character_folders.png){width=800}
+![](https://doidoteam.github.io/img/wiki-old/character_folders.png){width=800}
 
 Firstly, place your character in their own folder in `assets/images/characters/`. You aren't required to make a new folder but it helps organizing so we recommend you do so!
 
@@ -59,7 +59,7 @@ Your character might need other variables to make it work right.
 - `animExists(animName)` throws true if `animName` is a valid animation for this character
 
 ### Adding your character to the charList
-![](https://doidoteam.github.io/img/charlist.png){width=400}
+![](https://doidoteam.github.io/img/wiki-old/charlist.png){width=400}
 After coding your character, you still need to add it to the engine's internal list. Simply go over to CharacterUtil.hx, and add your character's name to the `charList()` function.
 
 ### Finalize Character
