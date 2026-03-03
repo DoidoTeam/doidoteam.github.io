@@ -17,9 +17,9 @@ Welcome to the FNF: Doido Engine homepage!
 <a href="https://doidoteam.github.io/funkin/">
   <img src="https://doidoteam.github.io/img/play.png" alt="Play" width="250">
 </a>
-<!--<a href="https://example.com">
+<a href="https://example.com">
   <img src="https://doidoteam.github.io/img/alpha.png" alt="4.0 Alpha" width="250">
-</a>-->
+</a>
 <a href="https://github.com/DoidoTeam/FNF-Doido-Engine/releases/tag/3.4.1">
   <img src="https://doidoteam.github.io/img/stable.png" alt="3.4.1 Stable" width="250">
 </a>
