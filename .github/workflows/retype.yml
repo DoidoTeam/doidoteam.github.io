@@ -21,4 +21,4 @@ jobs:
         with:
           branch: main
           update-branch: true
-          directory: /wiki-old
+          directory: /wiki
