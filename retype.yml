@@ -5,13 +5,13 @@ branding:
   title: "FNF: Doido Engine 3.4"
   label: Wiki
 links:
-  - text: "Play"
-    icon: play
-    link: "https://doidoteam.github.io/funkin/"
+  - text: "Home"
+    icon: home
+    link: "https://doidoteam.github.io/"
   - text: "Source Code"
     icon: mark-github
-    link: "https://github.com/DiogoTVV/FNF-Doido-Engine-3"
+    link: "https://github.com/DoidoTeam/FNF-Doido-Engine"
 footer:
-  copyright: ""
+  copyright: "Made by DoidoTeam"
 
 favicon: favicon.png
