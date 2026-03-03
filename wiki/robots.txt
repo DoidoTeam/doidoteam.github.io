@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://doidoteam.github.io/sitemap.xml.gz
