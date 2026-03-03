@@ -5,9 +5,6 @@ branding:
   title: "FNF: Doido Engine"
   label: Home
 links:
-  - text: "Home"
-    icon: home
-    link: "https://doidoteam.github.io/"
   - text: "Source Code"
     icon: mark-github
     link: "https://github.com/DoidoTeam/FNF-Doido-Engine"
