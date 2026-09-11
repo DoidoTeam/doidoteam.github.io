@@ -1,0 +1,5 @@
+﻿# Home
+
+- [Home](https://doidoteam.github.io/index.md): Home
+- [Credits](https://doidoteam.github.io/credits.md): DiogoTV - Lead Dev
+- [Mod Showcase](https://doidoteam.github.io/showcase.md)
